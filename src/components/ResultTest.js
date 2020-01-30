@@ -12,8 +12,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
       description
       bannerImage
       genres
-      averageScore
-      seasonYear
+      averageScore  
       siteUrl
   }
 }
@@ -21,7 +20,7 @@ query ($id: Int) { # Define which variables will be used in the query (id)
 
   // Define our query variables and values that will be used in the query request
   const variables = {
-    id: 15125,
+    id: 17325,
   }
 
   // Define the config we'll need for our Api request

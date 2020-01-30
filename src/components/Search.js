@@ -1,7 +1,7 @@
 import React from 'react'
-import Filters from './Filters'
-
 import './search.scss'
+
+import Filters from './Filters'
 
 function Search() {
   return (
