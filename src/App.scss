@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Alata|Public+Sans:400,700&display=swap');
+
+$font-title: 'Alata', sans-serif;
+$font: 'Public Sans', sans-serif;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #222f3e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  margin: auto;
+
+  header {
+    width: 80vw;
+    padding: 20px 10px;
+    text-align: center;
+    background-color: #e91e636e;
+    margin-top: 10px;
+    color: ghostwhite;
+
+    h1 {
+      font-family: $font-title;
+      font-size: 2.2em;
+      letter-spacing: 3px;
+    }
+  }
+
+  main {
+    min-height: 100vh;
+    width: 80vw;
+    font-family: $font;
+  }
+}
