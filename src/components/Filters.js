@@ -4,12 +4,14 @@ function Filters() {
   return (
     <div className='filters-container'>
       <select name='Genre' id='genre' className='filter-genre'>
-        <option selected value='genre'>
-          Genre
-        </option>
-        <option value='comedy'>Comedy</option>
+        <option value='DEFAULT'>Genre</option>
+        <option value='adventure'>Adventure</option>
         <option value='action'>Action</option>
+        <option value='comedy'>Comedy</option>
         <option value='drama'>Drama</option>
+        <option value='fantasy'>Fantasy</option>
+        <option value='romance'>Romance</option>
+        <option value='sports'>Sports</option>
       </select>
       <button type='radio' className='filter-review'>
         Per Review
