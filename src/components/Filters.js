@@ -11,9 +11,13 @@ function Filters() {
         <option value='action'>Action</option>
         <option value='drama'>Drama</option>
       </select>
-      <div className='year-container'>
-        <input type='text' placeholder='Year' />
-      </div>
+      <button type='radio' className='filter-review'>
+        Per Review
+      </button>
+
+      <input type='text' placeholder='Year' className='filter-year' />
+
+      <div className='btn btn-search'>Search</div>
     </div>
   )
 }

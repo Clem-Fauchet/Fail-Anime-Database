@@ -1,13 +1,104 @@
-@import '../App.scss';
+$font: 'Public Sans', sans-serif;
+$font-title: 'Alata', sans-serif;
 
 .search-container {
   width: 100%;
   background-color: #304053;
   padding: 20px 10px;
   margin-top: 25px;
+  box-shadow: 0px 5px 0px 0px #283442;
 
   .search-bar {
     display: flex;
     justify-content: space-around;
+
+    .text-bar {
+      padding: 5px 10px;
+      border-radius: 0px 0px 5px 5px;
+      width: 84%;
+      background-color: #222f3e;
+      outline: none;
+      border: none;
+      color: ghostwhite;
+      font-size: 14px;
+      font-family: $font;
+      box-shadow: inset -1px -2px 0px 0 #283442;
+      &::placeholder {
+        font-size: 15.5px;
+      }
+      &:focus {
+        background-color: #283442;
+        box-shadow: inset -1px -2px 0px 0 #222f3e;
+      }
+    }
+  }
+
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0px 0px;
+    width: 86%;
+    .btn-search {
+      width: 100%;
+      padding: 6px;
+      text-align: center;
+      margin-top: 0.5em;
+    }
+
+    .filter-genre,
+    .filter-review {
+      background: #222f3e;
+      outline: none;
+      border: none;
+      color: ghostwhite;
+      font-family: $font-title;
+      font-weight: 700;
+      font-size: 15px;
+      padding: 5px;
+      border-radius: 2px;
+    }
+    .filter-review {
+      padding: 6px;
+      &:focus {
+        background: #283442;
+      }
+    }
+
+    .filter-year {
+      padding: 8px;
+      border-radius: 0px 0px 5px 5px;
+      background-color: #222f3e;
+      outline: none;
+      border: none;
+      color: ghostwhite;
+      font-size: 13px;
+      font-family: $font;
+      box-shadow: inset -1px -2px 0px 0 #283442;
+      &::placeholder {
+        font-size: 14px;
+      }
+      &:focus {
+        background-color: #283442;
+        box-shadow: inset -1px -2px 0px 0 #222f3e;
+      }
+    }
+  }
+  .btn {
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-family: $font-title;
+    color: ghostwhite;
+    cursor: pointer;
+    background: #6f2548;
+    padding: 8px;
+    border: none;
+    border-radius: 5px 5px;
+    &:focus {
+      background: #5c1f3b;
+      box-shadow: inset -1px -2px 0px #6f2548;
+    }
   }
 }
