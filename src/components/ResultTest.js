@@ -9,11 +9,11 @@ query ($id: Int) { # Define which variables will be used in the query (id)
       english
     }
     type
-      description
-      bannerImage
-      genres
-      averageScore  
-      siteUrl
+    description
+    bannerImage
+    genres
+    averageScore
+    siteUrl
   }
 }
 `

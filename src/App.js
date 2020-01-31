@@ -1,15 +1,14 @@
 import React from 'react'
 
-import ApolloClient, { gql } from 'apollo-boost'
+import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
 import './App.scss'
-import Search from './components/Search'
-// import ResultTest from './components/ResultTest'
-import ExchangeRate from './components/ExchangeRate'
+import SearchTitle from './components/SearchTitle'
+import Results from './components/Results'
 
 const client = new ApolloClient({
-  uri: 'https://48p1r2roz4.sse.codesandbox.io',
+  uri: 'https://graphql.anilist.co',
 })
 
 function App() {
@@ -21,8 +20,8 @@ function App() {
             <h1>Anime & Manga</h1>
           </header>
           <main>
-            <Search />
-            <ExchangeRate />
+            <SearchTitle />
+            <Results />
           </main>
         </div>
       </div>
