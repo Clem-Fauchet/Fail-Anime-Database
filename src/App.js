@@ -5,7 +5,7 @@ import { ApolloProvider } from 'react-apollo'
 
 import './App.scss'
 import SearchTitle from './components/SearchTitle'
-import Results from './components/Results'
+import DefaultPage from './components/DefaultPage'
 
 const client = new ApolloClient({
   uri: 'https://graphql.anilist.co',
@@ -21,7 +21,8 @@ function App() {
           </header>
           <main>
             <SearchTitle />
-            <Results />
+
+            <DefaultPage />
           </main>
         </div>
       </div>
