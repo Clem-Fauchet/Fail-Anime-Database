@@ -22,7 +22,6 @@ const POSTS_QUERY = gql`
         bannerImage
         genres
         averageScore
-        siteUrl
       }
     }
   }
