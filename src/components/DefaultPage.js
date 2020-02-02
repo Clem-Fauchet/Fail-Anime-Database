@@ -5,23 +5,25 @@ import gql from 'graphql-tag'
 import { useQuery } from '@apollo/react-hooks'
 
 const POSTS_QUERY = gql`
-  query($id: Int, $page: Int, $perPage: Int, $search: String) {
+  query($id: Int, $page: Int, $perPage: Int) {
     Page(page: $page, perPage: $perPage) {
       pageInfo {
         currentPage
         lastPage
         perPage
       }
-      media(id: $id, search: $search) {
+      media(id: $id) {
         id
         title {
           english
         }
         type
-        description
-        bannerImage
         genres
         averageScore
+        status
+        seasonYear
+        description
+        bannerImage
       }
     }
   }

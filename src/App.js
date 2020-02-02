@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 
 import './App.scss'
-import SearchTitle from './components/SearchTitle'
+import SearchBox from './components/SearchBox'
 import DefaultPage from './components/DefaultPage'
 
 const client = new ApolloClient({
@@ -20,7 +20,7 @@ function App() {
             <h1>Anime & Manga</h1>
           </header>
           <main>
-            <SearchTitle />
+            <SearchBox />
 
             <DefaultPage />
           </main>
