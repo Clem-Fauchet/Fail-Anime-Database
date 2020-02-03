@@ -1,50 +1,20 @@
-import React, { useState } from 'react'
-import { useLazyQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import React from 'react'
 
-const GET_TYPE_QUERY = gql`
-  query($id: Int, $page: Int, $perPage: Int) {
-    Page(page: $page, perPage: $perPage) {
-      pageInfo {
-        currentPage
-        lastPage
-        perPage
-      }
-      media(type: $type) {
-        id
-        title {
-          english
-        }
-        type
-        genres
-        averageScore
-        status
-        seasonYear
-        description
-        bannerImage
-      }
-    }
-  }
-`
-
-function TypeList() {
-  const [state, setState] = useState({
-    anime: '',
-    manga: '',
-  })
-
-  const handleClickAnime = () => {
-    let anime = 'ANIME'
+function TypeList({ state, setState }) {
+  const loadAnime = (e) => {
+    let anime = e.target.value
     setState((prevState) => {
-      return { ...prevState, anime: anime }
+      return { ...prevState, manga: '', anime: anime }
     })
+    console.log(state)
   }
 
-  const handleClickManga = () => {
-    let manga = 'MANGA'
+  const loadManga = (e) => {
+    let manga = e.target.value
     setState((prevState) => {
-      return { ...prevState, manga: manga }
+      return { ...prevState, manga: manga, anime: '' }
     })
+    console.log(state)
   }
 
   return (
@@ -52,16 +22,16 @@ function TypeList() {
       <button
         type='radio'
         className='btn filter anime'
-        value={state}
-        onClick={handleClickAnime}
+        value='anime'
+        onClick={loadAnime}
       >
         ANIME
       </button>
       <button
         type='radio'
         className='btn filter manga'
-        value={state}
-        onClick={handleClickManga}
+        value='manga'
+        onClick={loadManga}
       >
         MANGA
       </button>

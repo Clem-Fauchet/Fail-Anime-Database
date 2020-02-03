@@ -2,10 +2,11 @@ import React from 'react'
 import './search.scss'
 import TypeList from './TypeList'
 
-function SearchBox() {
+function SearchBox({ state, setState }) {
   return (
     <div className='search-container'>
-      <TypeList />
+      <TypeList state={state} setState={setState} />
+
       <div className='filter selection'>
         <select name='Genre' id='genre' className='btn filter genre'>
           <option value='DEFAULT'>Genre</option>

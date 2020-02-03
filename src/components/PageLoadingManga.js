@@ -12,7 +12,7 @@ const POSTS_QUERY = gql`
         lastPage
         perPage
       }
-      media(id: $id) {
+      media(id: $id, type: MANGA) {
         id
         title {
           english
@@ -29,9 +29,9 @@ const POSTS_QUERY = gql`
   }
 `
 
-function PageLoading() {
+function PageLoadingManga() {
   const { loading, error, data } = useQuery(POSTS_QUERY, {
-    variables: {},
+    variables: { perPage: 8 },
   })
   if (loading) return <p>Loading ...</p>
   if (error) return <p>{error}</p>
@@ -45,4 +45,4 @@ function PageLoading() {
   )
 }
 
-export default PageLoading
+export default PageLoadingManga
