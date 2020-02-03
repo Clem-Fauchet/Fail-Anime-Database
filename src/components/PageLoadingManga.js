@@ -33,9 +33,9 @@ function PageLoadingManga() {
   const { loading, error, data } = useQuery(POSTS_QUERY, {
     variables: { perPage: 8 },
   })
-  if (loading) return <p>Loading ...</p>
+  if (loading) return <p className='loading'>Loading ...</p>
   if (error) return <p>{error}</p>
-  console.log(data.Page.media)
+
   return (
     <div className='media-container'>
       {data.Page.media.map((mediaItem) => (

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import MediaList from './MediaList'
 
 import gql from 'graphql-tag'
@@ -33,11 +33,26 @@ function PageLoadingAnime() {
   const { loading, error, data } = useQuery(POSTS_QUERY, {
     variables: { perPage: 8 },
   })
-  if (loading) return <p>Loading ...</p>
+
+  const [count, setCount] = useState(1)
+
+  const pageNext = () => {
+    setCount((prevCount) => prevCount + 1)
+    console.log(data.Page.pageInfo.currentPage)
+    console.log(count)
+  }
+
+  const pageBefore = () => {
+    setCount((prevCount) => prevCount - 1)
+    console.log(count)
+  }
+  if (loading) return <p className='loading'>Loading ...</p>
   if (error) return <p>{error}</p>
-  console.log(data.Page.media)
+
   return (
     <div className='media-container'>
+      <button onClick={pageNext}>Next</button>
+
       {data.Page.media.map((mediaItem) => (
         <MediaList key={mediaItem.id} mediaItem={mediaItem} />
       ))}

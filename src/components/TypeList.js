@@ -6,7 +6,6 @@ function TypeList({ state, setState }) {
     setState((prevState) => {
       return { ...prevState, manga: '', anime: anime }
     })
-    console.log(state)
   }
 
   const loadManga = (e) => {
@@ -14,7 +13,6 @@ function TypeList({ state, setState }) {
     setState((prevState) => {
       return { ...prevState, manga: manga, anime: '' }
     })
-    console.log(state)
   }
 
   return (
