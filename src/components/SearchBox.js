@@ -1,18 +1,11 @@
-import React, { useState, Fragment } from 'react'
+import React from 'react'
 import './search.scss'
+import TypeList from './TypeList'
 
 function SearchBox() {
   return (
     <div className='search-container'>
-      <div className='filter type'>
-        <button type='radio' className='btn filter anime'>
-          ANIME
-        </button>
-        <button type='radio' className='btn filter manga'>
-          MANGA
-        </button>
-      </div>
-
+      <TypeList />
       <div className='filter selection'>
         <select name='Genre' id='genre' className='btn filter genre'>
           <option value='DEFAULT'>Genre</option>
