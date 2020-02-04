@@ -17,7 +17,8 @@ $font: 'Public Sans', sans-serif;
   align-items: center;
   min-height: 100vh;
   margin: auto;
-  width: 500px;
+  max-width: 420px;
+  overflow: hidden;
 
   header {
     width: 95%;

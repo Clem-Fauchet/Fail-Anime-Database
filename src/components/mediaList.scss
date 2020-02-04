@@ -3,6 +3,14 @@
 $font: 'Montserrat', sans-serif;
 $font-title: 'Alata', sans-serif;
 
+.loading {
+  margin: 10% 5%;
+  font-size: 2em;
+  font-family: $font-title;
+  color: ghostwhite;
+  text-align: center;
+}
+
 .media-container {
   width: 100%;
   display: flex;
@@ -10,6 +18,14 @@ $font-title: 'Alata', sans-serif;
   justify-content: space-around;
   align-items: center;
   margin-top: 5%;
+
+  .page-container {
+    width: 15%;
+    background-color: #283442;
+    color: ghostwhite;
+    text-align: center;
+    font-family: $font;
+  }
 
   .media-item {
     width: 95%;

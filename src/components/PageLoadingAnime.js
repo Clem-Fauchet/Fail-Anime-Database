@@ -34,21 +34,13 @@ function PageLoadingAnime() {
     variables: { perPage: 8 },
   })
 
-  const [page, setPage] = useState({
-    currentPage: '',
-    hasNextPage: '',
-  })
-
   if (loading) return <p className='loading'>Loading ...</p>
   if (error) return <p>{error}</p>
-
-  const nextPage = () => {}
 
   return (
     <div className='media-container'>
       <div className='page-container'>
         <span>{data.Page.pageInfo.currentPage}</span>
-        <button onClick={nextPage}>Next</button>
       </div>
       {data.Page.media.map((mediaItem) => (
         <MediaList key={mediaItem.id} mediaItem={mediaItem} />
