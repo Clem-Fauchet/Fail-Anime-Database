@@ -9,8 +9,8 @@ const POSTS_QUERY = gql`
     Page(page: $page, perPage: $perPage) {
       pageInfo {
         currentPage
-        lastPage
         perPage
+        hasNextPage
       }
       media(id: $id, type: ANIME) {
         id
@@ -34,25 +34,22 @@ function PageLoadingAnime() {
     variables: { perPage: 8 },
   })
 
-  const [count, setCount] = useState(1)
+  const [page, setPage] = useState({
+    currentPage: '',
+    hasNextPage: '',
+  })
 
-  const pageNext = () => {
-    setCount((prevCount) => prevCount + 1)
-    console.log(data.Page.pageInfo.currentPage)
-    console.log(count)
-  }
-
-  const pageBefore = () => {
-    setCount((prevCount) => prevCount - 1)
-    console.log(count)
-  }
   if (loading) return <p className='loading'>Loading ...</p>
   if (error) return <p>{error}</p>
 
+  const nextPage = () => {}
+
   return (
     <div className='media-container'>
-      <button onClick={pageNext}>Next</button>
-
+      <div className='page-container'>
+        <span>{data.Page.pageInfo.currentPage}</span>
+        <button onClick={nextPage}>Next</button>
+      </div>
       {data.Page.media.map((mediaItem) => (
         <MediaList key={mediaItem.id} mediaItem={mediaItem} />
       ))}
